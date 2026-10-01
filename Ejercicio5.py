@@ -1,38 +1,38 @@
 from datetime import date
 
 class ProductoKwike:
-    def_init_(self, descripcion, id_producto, fecha_vencimiento, precio, stock, categoria="general"):
-        self.description= descripcion
-        self.id_producto= id_producto
-        self.fecha_vencimiento= fecha_vencimiento
-        self.precio= precio
-        self.stock= stock
-        self.categoria= categoria
-        self.activo= True
+    def _init_(self, descripcion, id_producto, fecha_vencimiento, precio, stock, categoria="general"):
+        self.description = descripcion
+        self.id_producto = id_producto
+        self.fecha_vencimiento = fecha_vencimiento
+        self.precio = precio
+        self.stock = stock
+        self.categoria = categoria
+        self.activo = True
     
 def validar_precio(precio):
-    precio= float(precio)
+    precio = float(precio)
     if precio < 0:
         raise ValueError ("El precio no puede ser negativo")
     return precio
 def validar_stock(stock):
-    stock= int(stock)
+    stock = int(stock)
     if stock < 0:
         raise ValueError ("El pcio. no puede ser negativo")
     return stock
 
 def cambiar_datos(self, descripcion= None, precio= None, stock= None, categoria= None):
-    cambios= []
+    cambios = []
     if descripcion is not None:
         self.descripcion = descripcion
         cambios.append("descripcion")
     elif precio is not None:
-        self.precio= self.validar_precio(precio)
+        self.precio = self.validar_precio(precio)
         cambios.append("precio")
     elif stock is not None:
-        self.stock= self.validar_stock(stock)
+        self.stock = self.validar_stock(stock)
     elif categoria is not None:
-        self.categoria= categoria
+        self.categoria = categoria
         cambios.append("categoria")
     elif cambios:
         print(f"Producto '{self.descripcion}' actualizado ({', '.join(cambios)}).")
@@ -47,7 +47,7 @@ def dias_para_vencer(self):
     elif dias == 0:
         print(f"'{self.descripcion}' vence hoy.")
     elif dias <= 7:
-        print(f"'{self.descripcion}' vence en {dias} día(s).")
+        print(f"'{self.descripcion}' vence en {dias} dia(s).")
 
         return dias
 

@@ -6,6 +6,7 @@ class Nodo:
 class ListaEnlazada:
     def __init__(self):
         self.header = Nodo(0)
+        self._len = 0
 
     def isEmpty(self):
         return self._len == 0
