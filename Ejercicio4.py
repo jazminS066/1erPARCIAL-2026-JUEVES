@@ -5,3 +5,14 @@
 # en orden descendente (de la Z a la A). En caso contrario,
 # se ordenará de forma ascendente (de la A a la Z). Por defecto, si la función es llamada
 # sin una "expresión" (solo la lista de eventos), la lista debe retornar ordenada de forma ascendente.
+eventos=["Kermes","Concurso de comida", "Reunion del Concejo Municipal"]
+def ordenar_eventos(eventos:list, expression: bool= False):
+    if not isistance (expression, bool):
+        raise TypeError("La expresion debe ser un booleano")
+    ordenados []
+    for evento in eventos:
+        ordenados.append(evento)
+    ordenados.sort(reverse= expression)
+    return ordenados
+print(ordenar_eventos(eventos))
+print(ordenar_eventos, True)
