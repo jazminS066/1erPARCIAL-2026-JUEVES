@@ -25,7 +25,7 @@ class ListaEnlazada:
         return f"ListaEnlazada({str(self)})"
 
     def getElem(self, pos):
-        "Devuelve el elemento en la posición `pos` (0-based)."
+        "Devuelve el elemento en  `pos` (0-based)."
         if pos < 0 or pos >= self._len:
             raise IndexError("fuera de rango.")
         aux = self.header._nxt
@@ -45,19 +45,6 @@ class ListaEnlazada:
     def add(self, elem):
         "Agrega al principio"
         self.header._nxt = Nodo(elem, self.header._nxt)
-        self._len += 1
-        return self
-
-    def addNE(self, elem):
-        "Agrega al final"
-        nuevo = Nodo(elem)
-        if self.isEmpty():
-            self.header._nxt = nuevo
-        else:
-            aux = self.header
-            while aux._nxt is not None:
-                aux = aux._nxt
-            aux._nxt = nuevo
         self._len += 1
         return self
 
@@ -83,20 +70,8 @@ class ListaEnlazada:
             act = act._nxt
 
         if act is None:
-            print(f"No se encontró {elem}.")
+            print(f"No se encontro {elem}.")
             return False
-
-    def removeNE(self):
-        "Elimina el último elemento."
-        if self.isEmpty():
-            print("Lista vacia.")
-            return False
-        ant = self.header
-        while ant._nxt._nxt is not None:
-            ant = ant._nxt
-        ant._nxt = None
-        self._len -= 1
-        return True
 
     def clear(self):
         self.header._nxt = None

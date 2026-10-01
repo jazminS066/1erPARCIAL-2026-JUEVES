@@ -1,13 +1,3 @@
-#Definir una clase ProductoKwikE que represente un artículo en venta en el Kwik-E-Mart. Contiene los datos:
-#descripcion: 'string'
-#id_producto: 'integer'
-#fecha_vencimiento: date (importar datetime)
-#precio: 'float'
-#stock: 'integer'
-#La clase debe contener métodos para facilitar:
-#Cambiar uno o varios datos del producto (descripción, precio, stock).
-#Calcular en cuántos días expira un producto. Si el método detecta que el producto ha expirado, deberá informar al usuario y marcar el stock como 0.
-#Importante: Pueden agregar más atributos y métodos si lo consideran necesario (ej: categoria).
 from datetime import date
 
 class ProductoKwike:
@@ -69,11 +59,3 @@ def disponible(self):
 
 def valor_inventario(self):
     return self.precio * self.stock
-
-def __str__(self):
-    return (f"[#{self.id_producto}] {self.descripcion} | {self.categoria} | ",
-            f"precio: {self.precio:.2f} | stock: {self.stock} | ",
-            f"vence: {self.fecha_vencimiento} ({'disponible' if self.disponible() else 'no disponible'})")
-
-def __repr__(self):
-    return f"ProductoKwikE('{self.descripcion}', {self.id_producto})"
