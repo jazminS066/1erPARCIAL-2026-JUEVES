@@ -8,4 +8,4 @@ def total_donas(a,b):
     for x in range (b):
         total+= a
     return total
-print("Total de donas: " total_donas)
+print("Total de donas: ", total_donas(a,b))
